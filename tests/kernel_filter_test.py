@@ -8,19 +8,19 @@ from PIL import Image
 import sys,os
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, BASE)
-from augmentator.kernel_filter import FastKernelFilter
+from augmentator.kernel_filter import KernelFilter
 
-class TestFastKernelFilter(unittest.TestCase):
+class TestKernelFilter(unittest.TestCase):
 
     def test_default_values(self):
-        ftf = FastKernelFilter()
+        ftf = KernelFilter()
         self.assertEqual(ftf.method, 'gaussian_high_pass')
         self.assertEqual(ftf.value, 0.5)
 
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_setter(self, mock_stdout):
-        ftf = FastKernelFilter('gaussian_low_pass', 0.2)
+        ftf = KernelFilter('gaussian_low_pass', 0.2)
         self.assertEqual(ftf.method, 'gaussian_low_pass')
         self.assertEqual(ftf.value, 0.2)
 
@@ -31,9 +31,9 @@ class TestFastKernelFilter(unittest.TestCase):
 
 
     def test_image_dims(self):
-        ftf = FastKernelFilter()
+        ftf = KernelFilter()
 
-        img = np.array(Image.open('images/Abra/0.jpg'))
+        img = np.array(Image.open('images/butterfly.jpg'))
         img_orig_shape = img.shape
         img = ftf.augment(img)
 
