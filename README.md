@@ -1,7 +1,7 @@
 # augmentator
 
 ## Authors
-Julius Ellermann
+Julius Ellermann<br>
 Jan Philipp Zimmmer
 
 ## Description
