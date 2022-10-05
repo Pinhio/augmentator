@@ -12,7 +12,7 @@ from augmentator.mixer import Mixer
 
 class TestMixer(unittest.TestCase):
 
-    TEST_IMG_DIR = 'tests/assets/mixer_test/'
+    TEST_IMG_DIR = 'tests/images/'
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_default_without_mix_img(self, mock_stdout):
@@ -23,7 +23,7 @@ class TestMixer(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_default_values(self, mock_stdout, test_img_dir=TEST_IMG_DIR):
         # define test image and create instance
-        img = np.array(Image.open(f'{test_img_dir}0.jpg'))
+        img = np.array(Image.open(f'{test_img_dir}butterfly.jpg'))
         c = Mixer(mix_img=img)
 
         self.assertEquals(c.method, 'avg')
@@ -34,8 +34,8 @@ class TestMixer(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_setters(self, mock_stdout, test_img_dir=TEST_IMG_DIR):
         # define test images and create instance
-        img_1 = np.array(Image.open(f'{test_img_dir}0.jpg'))
-        img_2 = np.array(Image.open(f'{test_img_dir}1.jpg'))
+        img_1 = np.array(Image.open(f'{test_img_dir}butterfly.jpg'))
+        img_2 = np.array(Image.open(f'{test_img_dir}flower.jpg'))
         c = Mixer(method='rel', value=0.1, mix_img=img_1)
 
         # instantiation
@@ -59,7 +59,7 @@ class TestMixer(unittest.TestCase):
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_setters_invalid_inputs(self, mock_stdout, test_img_dir=TEST_IMG_DIR):
-        img = np.array(Image.open(f'{test_img_dir}0.jpg'))
+        img = np.array(Image.open(f'{test_img_dir}butterfly.jpg'))
         c = Mixer(method='xxx', value=3, mix_img=img)
 
         # instantiation
@@ -80,8 +80,8 @@ class TestMixer(unittest.TestCase):
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_image_dims_no_reshape(self, mock_stdout, test_img_dir=TEST_IMG_DIR):
-        img_1 = np.array(Image.open(f'{test_img_dir}0.jpg'))
-        img_2 = np.array(Image.open(f'{test_img_dir}0.jpg'))
+        img_1 = np.array(Image.open(f'{test_img_dir}butterfly.jpg'))
+        img_2 = np.array(Image.open(f'{test_img_dir}butterfly.jpg'))
         c = Mixer(method='avg', value=0.5, mix_img=img_1)
 
         should_shape = img_2.shape
@@ -90,8 +90,8 @@ class TestMixer(unittest.TestCase):
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_image_dims_with_reshape(self, mock_stdout, test_img_dir=TEST_IMG_DIR):
-        img_1 = np.array(Image.open(f'{test_img_dir}0.jpg'))
-        img_2 = np.array(Image.open(f'{test_img_dir}1.jpg'))
+        img_1 = np.array(Image.open(f'{test_img_dir}butterfly.jpg'))
+        img_2 = np.array(Image.open(f'{test_img_dir}flower.jpg'))
         c = Mixer(method='avg', value=0.5, mix_img=img_1)
 
         should_shape = (max(img_1.shape[0], img_2.shape[0]),
