@@ -62,4 +62,5 @@ Examples can be taken in the following order: `base_image, color_transformer, cr
 <img src="/assets/kernel_filter.jpg" height="200" height="200"/>
 <img src="/assets/noise_injector.jpg" height="200" height="200"/>
 <img src="/assets/translator.jpg" height="200" height="200"/>
+<img src="/assets/rotator.jpg" height="200" height="200"/>
 <img src="/assets/styler.jpg" height="200" height="200"/>
