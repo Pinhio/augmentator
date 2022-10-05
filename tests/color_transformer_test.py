@@ -50,16 +50,6 @@ class TestColorTransformer(unittest.TestCase):
         self.assertEqual(c.channel, 'rgb')
 
 
-    def test_get_channel_encodings(self):
-        c = Color_Transformer()
-
-        self.assertEqual(c.__get_channel_encoding(), [0,1,2])
-        c.set_channel('r')
-        self.assertEqual(c.__get_channel_encoding(), [0])
-        c.set_channel('gb')
-        self.assertEqual(c.__get_channel_encoding(), [1,2])
-
-
     def test_image_dims(self):
         c = Color_Transformer(method='kill', channel='gb')
 
