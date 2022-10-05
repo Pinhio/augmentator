@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: augmentator
+Version: 0.0.1
+Summary: Library for Image Data Augmentation
+Author-email: Julius Ellermann <334social@gmail.com>, Jan Philipp Zimmer <j.philippzimmer@gmx.de>
+Project-URL: Homepage, https://github.com/Pinhio/augmentator
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNUv3 License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# augmentator
+TODO

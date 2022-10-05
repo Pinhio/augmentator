@@ -19,13 +19,9 @@ classifiers = [
 ]
 dependencies = [
     "numpy",
-    "random",
-    "re",
-    "math",
-    "os",
     "tensorflow",
     "tensorflow_hub",
-    "PIL"
+    "Pillow"
 ]
 
 [project.urls]
