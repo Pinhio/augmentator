@@ -9,8 +9,10 @@ Project for the **Big** Data Praktikum with the topic *Image Data Augmentation* 
 This project provides a library with several basic image data augmentation methods like *rotation*, *translation* or *cropping* as well as the deep learning method *neural style transfer*.<br>
 All of the implemented methods were mainly inspired by the paper [A survey on Image Data Augmentation for Deep Learning](https://doi.org/10.1186/s40537-019-0197-0).
 
-## Intallation
-
+## Installation
+Navigate to the project folder of the augmentator and run the following commands:
+`python -m build`
+`pip install .`
 ___
 ## methods provided by the library
 * color transformation
