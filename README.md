@@ -2,7 +2,7 @@
 
 ## Authors
 Julius Ellermann<br>
-Jan Philipp Zimmmer
+Jan Philipp Zimmer
 
 ## Description
 Project for the **Big** Data Praktikum with the topic *Image Data Augmentation* of the University of Leipzig<br>
