@@ -12,7 +12,7 @@ plt.savefig('assets/base.jpg', bbox_inches='tight', transparent=True, pad_inches
 
 # TODO: config that actually changes something
 from augmentator.color_transformer import Color_Transformer
-ct = Color_Transformer()
+ct = Color_Transformer('kill', channel='r')
 
 img_augment = ct.augment(img.copy())
 plt.figure()

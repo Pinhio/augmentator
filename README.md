@@ -53,7 +53,7 @@ The augmentations are automatically performed on a provided image dataset. For t
 
 ___
 ## examples
-Examples can be taken in the following order: `base_image, color_transformer, cropper, eraser, flipper, kernel_filter, noise_injector, translator, styler`<br>
+Examples can be taken in the following order: `base_image, color_transformer, cropper, eraser, flipper, kernel_filter, noise_injector, translator, rotator, styler`<br>
 <img src="/assets/base.jpg" height="200" height="200"/>
 <img src="/assets/color_transformer.jpg" height="200" height="200"/>
 <img src="/assets/cropper.jpg" height="200" height="200"/>
