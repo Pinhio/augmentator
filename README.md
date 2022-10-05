@@ -10,8 +10,8 @@ This project provides a library with several basic image data augmentation metho
 All of the implemented methods were mainly inspired by the paper [A survey on Image Data Augmentation for Deep Learning](https://doi.org/10.1186/s40537-019-0197-0).
 
 ## Installation
-Navigate to the project folder of the augmentator and run the following commands:
-`python -m build`
+Navigate to the project folder of the augmentator and run the following commands:<br>
+`python -m build`<br>
 `pip install .`
 ___
 ## methods provided by the library
