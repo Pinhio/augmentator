@@ -61,9 +61,12 @@ class TestColorTransformer(unittest.TestCase):
 
 
     def test_rgb_vals_kill(self):
+        # initialization
         c = Color_Transformer(method='kill', channel='gb')
+        img = np.zeros(shape=(2,2,3))
+        img[::] = 255
 
-        img = np.array(Image.open('tests/images/butterfly.jpg'))
+        # kill
         img = c.augment(img)
 
         self.assertEqual(img[0][0][0], 255)
@@ -72,9 +75,12 @@ class TestColorTransformer(unittest.TestCase):
 
 
     def test_rgb_vals_keep(self):
+        # initialization
         c = Color_Transformer(method='keep', channel='gb')
+        img = np.zeros(shape=(2,2,3))
+        img[::] = 255
 
-        img = np.array(Image.open('tests/images/butterfly.jpg'))
+        # keep
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 0)
@@ -83,10 +89,12 @@ class TestColorTransformer(unittest.TestCase):
 
 
     def test_rgb_vals_min_max(self):
+        # initialization
         c = Color_Transformer(method='max', channel='r', value=200)
+        img = np.zeros(shape=(2,2,3))
+        img[::] = 255
 
         # max
-        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 200)
@@ -104,11 +112,15 @@ class TestColorTransformer(unittest.TestCase):
 
 
     def test_rgb_vals_dec_inc_abs(self):
+        # initialization
         c = Color_Transformer(method='dec', value=15, channel='rgb')
+        img = np.zeros(shape=(2,2,3))
+        img[::] = 255
 
         # decrease
-        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
+
+        r = img[0][0][0]
         
         self.assertEqual(img[0][0][0], 240)
         self.assertEqual(img[0][0][1], 240)
@@ -124,10 +136,12 @@ class TestColorTransformer(unittest.TestCase):
 
 
     def test_rgb_vals_dec_percentage(self):
+        # initialization
         c = Color_Transformer(method='dec', value=155, channel='r')
+        img = np.zeros(shape=(2,2,3))
+        img[::] = 255
 
         # create baseline with r-value at 100
-        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 100)
@@ -145,10 +159,12 @@ class TestColorTransformer(unittest.TestCase):
 
 
     def test_rgb_vals_inc_percentage(self):
+        # initialization
         c = Color_Transformer(method='dec', value=155, channel='r')
+        img = np.zeros(shape=(2,2,3))
+        img[::] = 255
 
         # create baseline with r-value at 100
-        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 100)
