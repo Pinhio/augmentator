@@ -16,7 +16,7 @@ from augmentator.styler import Styler
 class TestStyler(unittest.TestCase):
 
     def test_default_values(self):
-        s = Styler('model', 'styles', 'wave')
+        s = Styler('styles', 'wave')
         self.assertNotEqual(s.model, NULL)
         self.assertEqual(s.style_folder, 'styles')
         self.assertIsInstance(s.style, Tensor)
@@ -25,26 +25,20 @@ class TestStyler(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_setter(self, mock_stdout):
         try:
-            s = Styler('???', 'styles', 'wave')
+            s = Styler('???', 'wave')
         except:
             s = NULL
         self.assertNotIsInstance(s, Styler)
 
         try:
-            s = Styler('model', '???', 'wave')
-        except:
-            s = NULL
-        self.assertNotIsInstance(s, Styler)
-
-        try:
-            s = Styler('model', 'styles', '???')
+            s = Styler('styles', '???')
         except:
             s = NULL
         self.assertNotIsInstance(s, Styler)
 
 
     def test_image_dims(self):
-        s = Styler('model', 'styles', 'wave')
+        s = Styler('styles', 'wave')
 
         img = np.array(Image.open('images/butterfly.jpg'))
         img_orig_shape = img.shape
