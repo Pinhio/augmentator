@@ -63,7 +63,7 @@ class TestColorTransformer(unittest.TestCase):
     def test_image_dims(self):
         c = Color_Transformer(method='kill', channel='gb')
 
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         should_shape = img.shape
         img = c.augment(img)
 
@@ -73,7 +73,7 @@ class TestColorTransformer(unittest.TestCase):
     def test_rgb_vals_kill(self):
         c = Color_Transformer(method='kill', channel='gb')
 
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
 
         self.assertEqual(img[0][0][0], 255)
@@ -84,7 +84,7 @@ class TestColorTransformer(unittest.TestCase):
     def test_rgb_vals_keep(self):
         c = Color_Transformer(method='keep', channel='gb')
 
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 0)
@@ -96,7 +96,7 @@ class TestColorTransformer(unittest.TestCase):
         c = Color_Transformer(method='max', channel='r', value=200)
 
         # max
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 200)
@@ -117,7 +117,7 @@ class TestColorTransformer(unittest.TestCase):
         c = Color_Transformer(method='dec', value=15, channel='rgb')
 
         # decrease
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 240)
@@ -137,7 +137,7 @@ class TestColorTransformer(unittest.TestCase):
         c = Color_Transformer(method='dec', value=155, channel='r')
 
         # create baseline with r-value at 100
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 100)
@@ -158,7 +158,7 @@ class TestColorTransformer(unittest.TestCase):
         c = Color_Transformer(method='dec', value=155, channel='r')
 
         # create baseline with r-value at 100
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img = c.augment(img)
         
         self.assertEqual(img[0][0][0], 100)

@@ -33,7 +33,7 @@ class TestTranslator(unittest.TestCase):
     def test_image_dims(self):
         t = Translator()
 
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img_orig_shape = img.shape
         img = t.augment(img)
 

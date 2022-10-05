@@ -19,7 +19,7 @@ class Styler():
         style_folder: location of style images on disk.
         style: style to use stored in style_folder.
     '''
-    def __init__(self, style_folder:str, style:str, model_folder:str='model') -> None:
+    def __init__(self, style_folder:str, style:str, model_folder:str='augmentator/model') -> None:
         # load model
         self.set_model(model_folder)
 

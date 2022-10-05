@@ -33,7 +33,7 @@ class TestKernelFilter(unittest.TestCase):
     def test_image_dims(self):
         ftf = KernelFilter()
 
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img_orig_shape = img.shape
         img = ftf.augment(img)
 

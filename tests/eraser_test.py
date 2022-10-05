@@ -73,7 +73,7 @@ class TestEraser(unittest.TestCase):
     def test_image_dims(self):
         c = Eraser()
 
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         should_shape = img.shape
         img_result = c.augment(img)
         self.assertEqual(should_shape, img_result.shape)

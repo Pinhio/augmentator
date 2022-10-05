@@ -29,7 +29,7 @@ class TestFlipper(unittest.TestCase):
     def test_image_dims(self):
         f = Flipper()
 
-        img = np.array(Image.open('images/butterfly.jpg'))
+        img = np.array(Image.open('tests/images/butterfly.jpg'))
         img_orig_shape = img.shape
         img = f.augment(img)
 
