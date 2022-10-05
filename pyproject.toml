@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -17,6 +17,20 @@ classifiers = [
     "License :: OSI Approved :: GNUv3 License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "numpy",
+    "random",
+    "re",
+    "math",
+    "os",
+    "tensorflow",
+    "tensorflow_hub",
+    "PIL"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/Pinhio/augmentator"
+
+[tool.setuptools.packages.find]
+include = ["augmentator*"]
+exclude = ["tests*"]
