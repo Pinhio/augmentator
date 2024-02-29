@@ -18,7 +18,7 @@ Navigate to the project folder of the augmentator and run the following commands
 `python -m build`<br><br>
 `pip install .`
 ___
-## methods provided by the library
+## Augmentations provided by the library
 * color transformation
 * cropping
 * erasing
