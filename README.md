@@ -4,7 +4,7 @@
 Julius Ellermann<br>
 Jan Philipp Zimmer
 
-This is the installable version of our Augmentation Library.
+This is the installable version of our Augmentation Library.<br>
 For the Classification project we used it for please refer to:
 https://github.com/3LL3RM4NN/image_data_augmentation
 
