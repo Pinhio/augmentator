@@ -4,6 +4,10 @@
 Julius Ellermann<br>
 Jan Philipp Zimmer
 
+This is the installable version of our Augmentation Library.
+For the Classification project we used it for please refer to:
+https://github.com/3LL3RM4NN/image_data_augmentation
+
 ## Description
 Project for the **Big** Data Praktikum with the topic *Image Data Augmentation* of the University of Leipzig<br>
 This project provides a library with several basic image data augmentation methods like *rotation*, *translation* or *cropping* as well as the deep learning method *neural style transfer*.<br>
